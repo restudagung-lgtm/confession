@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ada yang mau aku bilang…</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main id="app">
+
+    <!-- Layar 1: Welcome -->
+    <section id="screen-welcome" class="screen active" aria-live="polite">
+      <h1 id="welcome-title"></h1>
+      <p id="welcome-text"></p>
+      <p class="hint" id="welcome-hint"></p>
+    </section>
+
+    <!-- Layar 2: Input nama -->
+    <section id="screen-name" class="screen">
+      <h2 id="name-title"></h2>
+      <form id="name-form" autocomplete="off">
+        <input type="text" id="name-input" maxlength="30" required>
+        <button type="submit" class="btn btn-primary" id="name-submit"></button>
+      </form>
+      <p class="error" id="name-error" role="alert"></p>
+    </section>
+
+    <!-- Layar 3: Pertanyaan -->
+    <section id="screen-question" class="screen">
+      <h2 id="question-text"></h2>
+      <div class="buttons">
+        <button type="button" class="btn btn-primary" id="btn-yes"></button>
+        <button type="button" class="btn btn-secondary" id="btn-no"></button>
+      </div>
+    </section>
+
+    <!-- Layar 4: Ucapan, surat, galeri -->
+    <section id="screen-success" class="screen">
+      <img id="success-photo" class="photo" alt="" hidden>
+      <h2 id="success-title"></h2>
+      <p id="success-text"></p>
+
+      <article id="letter" class="letter" hidden>
+        <h3 id="letter-title"></h3>
+        <div id="letter-body"></div>
+        <p id="letter-sign" class="sign"></p>
+      </article>
+
+      <h3 id="gallery-title" class="gallery-title" hidden></h3>
+      <div id="gallery" class="gallery" hidden></div>
+
+      <a id="wa-btn" class="btn btn-primary" target="_blank" rel="noopener" hidden></a>
+    </section>
+
+  </main>
+
+  <div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Foto besar">
+    <button type="button" id="lightbox-close" class="lightbox-close" aria-label="Tutup">✕</button>
+    <figure>
+      <img id="lightbox-img" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+
+  <button type="button" id="music-toggle" class="music-toggle" aria-label="Nyalakan atau matikan musik" hidden>🔊</button>
+  <div id="hearts" aria-hidden="true"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
